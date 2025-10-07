@@ -55,7 +55,7 @@ public class FileListPane extends JPanel implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         for(ListElement element : elements) {
             if (e.getSource() == element.viewButton) {
-                viewImage();
+                viewImage(element.getFile().getAbsolutePath());
                 return;
             } else if (e.getSource() == element.removeButton) {
                 removeFile(element);
@@ -70,8 +70,8 @@ public class FileListPane extends JPanel implements ActionListener {
         }
     }
 
-    private void viewImage() {
-
+    private void viewImage(String filePath) {
+        new ViewWindow(filePath);
     }
 
     private void removeFile(ListElement e) {
