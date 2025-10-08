@@ -99,7 +99,7 @@ public class FileListPane extends JPanel implements ActionListener {
 
 
 
-    private class ListElement extends JPanel {
+    protected class ListElement extends JPanel {
         protected File file;
         protected JLabel label;
         protected JButton viewButton;
