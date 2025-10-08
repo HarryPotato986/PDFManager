@@ -21,6 +21,16 @@ dependencies {
     implementation 'com.github.librepdf:openpdf:3.0.0'
 }
 
+jar {
+    manifest {
+        attributes 'Main-Class' : 'com.github.HarryPotato986.Main'
+    }
+
+    from {
+        configurations.runtimeClasspath.collect {it.isDirectory() ? it : zipTree(it)}
+    }
+}
+
 test {
     useJUnitPlatform()
 }
